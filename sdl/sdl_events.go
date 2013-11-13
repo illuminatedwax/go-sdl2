@@ -430,14 +430,22 @@ func cEvent(event Event) *CEvent {
 }
 
 func WaitEventTimeout(event *Event, timeout int) int {
-	_event := (*C.SDL_Event) (unsafe.Pointer(event))
+	var cevent C.SDL_Event
 	_timeout := (C.int) (timeout)
-	return (int) (C.SDL_WaitEventTimeout(_event, _timeout))
+	ret := C.SDL_WaitEventTimeout(&cevent, _timeout)
+	if ret == 0 {
+		return nil
+	}
+	return goEvent((*CEvent)(unsafe.Pointer(&cevent)))
 }
 
 func WaitEvent(event *Event) int {
-	_event := (*C.SDL_Event) (unsafe.Pointer(event))
-	return (int) (C.SDL_WaitEvent(_event))
+	var cevent C.SDL_Event
+	ret := C.SDL_WaitEvent(&cevent)
+	if ret == 0 {
+		return nil
+	}
+	return goEvent((*CEvent)(unsafe.Pointer(&cevent)))
 }
 
 func PushEvent(event *Event) int {
