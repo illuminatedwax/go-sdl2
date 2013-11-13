@@ -4,8 +4,8 @@
 
 import (
 	"fmt"
-	"github.com/illuminatedwax/go-gl/gl"
-	"github.com/illuminatedwax/go-sdl2/sdl"
+	"github.com/jackyb/go-gl/gl"
+	"github.com/jackyb/go-sdl2/sdl"
 )
 
 func main() {

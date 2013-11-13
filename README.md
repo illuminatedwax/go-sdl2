@@ -22,18 +22,18 @@ On __Arch Linux__, type:
 Installation
 ============
 To get the bindings, type:  
-`go get -v github.com/illuminatedwax/go-sdl2/sdl`  
-`go get -v github.com/illuminatedwax/go-sdl2/sdl_mixer`  
-`go get -v github.com/illuminatedwax/go-sdl2/sdl_image`
+`go get -v github.com/jackyb/go-sdl2/sdl`  
+`go get -v github.com/jackyb/go-sdl2/sdl_mixer`  
+`go get -v github.com/jackyb/go-sdl2/sdl_image`
 
 or type this if you use Bash terminal:  
-`go get -v github.com/illuminatedwax/go-sdl2/sdl{,_mixer,_image}`
+`go get -v github.com/jackyb/go-sdl2/sdl{,_mixer,_image}`
 
 Example
 =======
 	package main
 
-	import "github.com/illuminatedwax/go-sdl2/sdl"
+	import "github.com/jackyb/go-sdl2/sdl"
 
 	func main() {
 		window := sdl.CreateWindow("test", sdl.WINDOWPOS_UNDEFINED, sdl.WINDOWPOS_UNDEFINED,
@@ -53,13 +53,12 @@ For more complete examples, see inside the _examples_ folder.
 
 Documentation
 =============
-For now, take a look at http://godoc.org/github.com/illuminatedwax/go-sdl2/sdl.
+For now, take a look at http://godoc.org/github.com/jackyb/go-sdl2/sdl.
 
 Contributors
 ============
 * [Jacky Boen](https://github.com/jackyb)
 * [HardWareGuy](https://github.com/HardWareGuy)
-* [illuminatedwax](https://github.com/illuminatedwax)
 
 License
 =======
