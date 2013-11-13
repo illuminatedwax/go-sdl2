@@ -4,7 +4,7 @@ package mix
 //#include <SDL2/SDL_mixer.h>
 import "C"
 import "unsafe"
-import "github.com/jackyb/go-sdl2/sdl"
+import "github.com/illuminatedwax/go-sdl2/sdl"
 
 type Chunk struct {
 	Allocated int32
