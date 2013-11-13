@@ -429,7 +429,7 @@ func cEvent(event Event) *CEvent {
 	return (*CEvent) (unsafe.Pointer(evv.UnsafeAddr()))
 }
 
-func WaitEventTimeout(event *Event, timeout int) int {
+func WaitEventTimeout(event *Event, timeout int) Event {
 	var cevent C.SDL_Event
 	_timeout := (C.int) (timeout)
 	ret := C.SDL_WaitEventTimeout(&cevent, _timeout)
@@ -439,7 +439,7 @@ func WaitEventTimeout(event *Event, timeout int) int {
 	return goEvent((*CEvent)(unsafe.Pointer(&cevent)))
 }
 
-func WaitEvent(event *Event) int {
+func WaitEvent(event *Event) Event {
 	var cevent C.SDL_Event
 	ret := C.SDL_WaitEvent(&cevent)
 	if ret == 0 {
